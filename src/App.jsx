@@ -40,6 +40,8 @@ function App() {
   const [reportedItems, setReportedItems]= useState([])
   const [date, setDate] = useState("")
 
+  const [selectedItem, setSelectedItem] = useState(null)
+  
   const allItems = [...items, ...reportedItems]
   const filteredItems = allItems.filter((item) => {
     const matchesFilter =
@@ -78,7 +80,8 @@ function App() {
 
   return (
     <div className="app">
-
+      
+      
       <header>
         <h1>Campus Lost & Found</h1>
         <p>Find what you've lost. Return what you've found.</p>
@@ -175,9 +178,39 @@ function App() {
 
       <h2>Recent Reports</h2>
 
+      {
+        selectedItem && (
+          <div className="modal-overlay">
+          <div className="item-details">
+            <button 
+            className="close-button"
+            onClick={()=> setSelectedItem(null)}>
+             ✕
+            </button>
+
+            <h2>{selectedItem.name}</h2>
+
+            <span className={selectedItem.type.toLowerCase()}>
+              {selectedItem.type}
+            </span>
+            
+            <p>📍 Location: {selectedItem.location}</p>
+            <p>📂 Category:  {selectedItem.category}</p>
+            <p>📅 Date Found: {selectedItem.date}</p>
+
+            <p>{selectedItem.description}</p>
+          </div>
+          </div>
+        )
+      }
+
       <div className="items-container">
         {filteredItems.map((item) => (
-          <div className="items-card" key={item.name}>
+          <div 
+            className="items-card"
+            key={item.name}
+            onClick= {()=> setSelectedItem(item)}
+          >
             <h3>{item.name}</h3>
 
             <span className={item.type.toLowerCase()}>
