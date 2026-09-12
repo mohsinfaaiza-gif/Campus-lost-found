@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin-bottom: 20px;
+  color: #222;
+}
+
+header p {
+  color: #666;
+}
+
+.search input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.items-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.items-card h3 {
+  margin-top: 0;
+  color: #222;
+}
+
+.lost {
+  color: #c62828;
+}
+
+.found {
+  color: #2e7d32;
+}
+
+@media (max-width: 700px) {
+  .items-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filters{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.filters button {
+  padding: 10px 110px;
+  border: 1px solid #ddd;
+  border-radius:8px;
+  background:rgb(29, 29, 27);
+  cursor:pointer;
+  font-size: 15px;
+}
+
+.filters button:hover{
+  background: #685c5c;
+}
+
+.report-button{
+  padding: 12px 20px;
+  margin-top:  15px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.report-button:hover{
+  background: #444;
+}
+
+.report-form {
+  background: white;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.report-form h2 {
+  margin-top: 0;
+  color: #222;
+}
+
+.report-form input,
+.report-form textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.report-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.report-form button {
+  padding: 10px 18px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+select{
+  padding: 10px 12px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  
+}
