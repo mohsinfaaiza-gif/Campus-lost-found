@@ -32,6 +32,7 @@ function App() {
   const [location, setLocation] = useState("")
   const [description, setDescription]= useState("")
   const [reportedItems, setReportedItems]= useState([])
+  const [date, setDate] = useState("")
 
   const allItems = [...items, ...reportedItems]
   const filteredItems = allItems.filter((item) => {
@@ -53,6 +54,7 @@ function App() {
       category: category,
       location: location,
       description: description,
+      date: date,
     }
 
     setReportedItems([...reportedItems, newItem])
@@ -62,7 +64,7 @@ function App() {
     setDescription("")
     setType("Lost")
     setCategory("Other")
-
+    setDate("")
     setShowForm(false)
   }
 
@@ -118,6 +120,12 @@ function App() {
               value= {location}
               onChange = {(event) => setLocation(event.target.value)}
               required            
+            />
+
+            <input  type= "date"
+            value= {date}
+            onChange={(event)=> setDate(event.target.value)}
+            required
             />
 
             <textarea
