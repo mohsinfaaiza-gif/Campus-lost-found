@@ -8,16 +8,22 @@ function App() {
       name: "Black Water Bottle",
       type: "Lost",
       location: "Library",
+      category: "Others",
+      date: "2026-09-12",
     },
     {
       name: "Blue Calculator",
       type: "Found",
       location: "Block B",
+      category: "Electronics",
+      date: "2026-08-13",
     },
     {
       name: "Black Backpack",
       type: "Found",
       location: "Block B",
+      category: "Others",
+      date: "2026-09-10",
     },
   ]
 
@@ -179,6 +185,8 @@ function App() {
             </span>
 
             <p>📍 {item.location}</p>
+            <p>📂 {item.category}</p>
+            <p>📅 {item.date}</p>
           </div>
         ))}
       </div>
